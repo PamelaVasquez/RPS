@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock, Paper or Scissor</title>
+  </head>
+  <body>
+    <header>
+      <h1>LET'S PLAY!</h1>
+    </header>
+    <div class="choices">
+      <center>
+        <h3>Pick one</h3>
+        <button id="rock" class="btn">Rock</button>
+        <button id="paper" class="btn">Paper</button>
+        <button id="scissor" class="btn">Scissor</button>
+      </center>
+    </div>
+
+    <h3 class="result"></h3>
+
+    <script>
+      var userChoice;
+
+      var rockBtn = document.getElementById("rock");
+      rockBtn.addEventListener("click", function(event) {
+        console.log("User Selected Rock");
+        rsp("rock");
+      });
+
+      var paperBtn = document.getElementById("paper");
+      paperBtn.addEventListener("click", function(event) {
+        console.log("User Selected Paper");
+        rsp("paper");
+      });
+
+      var scissorBtn = document.getElementById("scissor");
+      scissorBtn.addEventListener("click", function(event) {
+        console.log("User Selected Scissor");
+        rsp("scissor");
+      });
+
+      //   var buttons = document.getElementsByTagName("button");
+      //   for (var i = 0; i < buttons.length; i++) {
+      //     buttons[i].addEventListener("click", function(event) {
+      //       console.log("[DEBUG] clicked", event.target.textContent);
+      //       rsp(event.target.textContent);
+      //     });
+      //   }
+
+      //   console.log(i);
+
+      // .addEventListener("click", rsp);
+      function rsp(userChoice) {
+        var gameChoices = ["Rock", "Paper", "Scissor"];
+        var randomChoice = Math.floor(Math.random() * gameChoices.length);
+        var computerChoice = gameChoices[randomChoice];
+        var gameScenario =
+          userChoice.toUpperCase() + " " + computerChoice.toLocaleUpperCase();
+
+        console.log(gameScenario);
+
+        switch (gameScenario) {
+          case "ROCK SCISSOR":
+          case "SCISSOR PAPER":
+          case "PAPER ROCK":
+            alert("YOU WIN!");
+            break;
+          case "SCISSOR ROCK":
+          case "PAPER SCISSOR":
+          case "ROCK PAPER":
+            alert("YOU LOSE!");
+            break;
+          case "SCISSOR SCISSOR":
+          case "PAPER PAPER":
+          case "ROCK ROCK":
+            alert("TIE");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

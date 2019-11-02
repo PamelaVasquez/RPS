@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=McLaren&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+header {
+    background-color: #131f41;
+    color: white;
+    font-family: McLaren;
+    padding: 5px;
+    text-align: center;
+    font-size: 40px;
+}
+
+h3 {
+    color: white;
+    font-size: 20px;
+    font-family: McLaren;
+    margin-bottom: 5px;
+}
+
+.choices {
+    margin: 10px auto;
+}
+
+.btn {
+    padding: 50px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: none;
+}
+
+#rock:hover,
+#paper:hover,
+#scissor:hover {
+    background-color: rgb(168, 163, 154);
+    transition: 0.3s;
+}
+
+#rock {
+    background-color: darkorange;
+}
+
+#paper {
+    background-color: yellowgreen;
+}
+
+#scissor {
+    background-color: palevioletred;
+}
